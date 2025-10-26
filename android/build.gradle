@@ -1,39 +1,48 @@
-group 'io.antmedia.flutter_antmedia'
-version '1.0-SNAPSHOT'
+// NO buildscript block should be here
 
+// plugins {} block MUST be the first significant block
 plugins {
     id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.android' 
 }
 
+// group and version lines MUST come AFTER plugins {}
+group 'io.antmedia.flutter_antmedia' // Matched namespace for consistency
+version '1.0-SNAPSHOT'
+
 android {
-    namespace "io.antmedia.flutter_antmedia"
-    compileSdkVersion 34
+    namespace "io.antmedia.flutter_antmedia" 
+    compileSdk 34 // Updated to match Flutter 3.35+
     
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 34
+        minSdkVersion 21 // Updated Flutter minimum
+        targetSdkVersion 34 // Added target SDK
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
+        // Updated Java version (17 is fine if you prefer)
+        sourceCompatibility JavaVersion.VERSION_17 
         targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '17'
+        // Updated JVM target to match Java version
+        jvmTarget = '17' 
     }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
     
+    // Keep lint options if needed
     lint {
         disable 'InvalidPackage'
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.23"
-    implementation 'androidx.core:core-ktx:1.12.0'
+    // Let the Kotlin plugin version (set in main project) manage this version
+    implementation "org.jetbrains.kotlin:kotlin-stdlib" 
+    // This androidx core version is fine
+    implementation 'androidx.core:core-ktx:1.12.0' 
 }
