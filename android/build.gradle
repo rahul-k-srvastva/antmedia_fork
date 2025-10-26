@@ -1,13 +1,6 @@
 group 'io.antmedia.flutter_antmedia'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
